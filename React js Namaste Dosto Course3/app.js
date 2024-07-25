@@ -25,14 +25,42 @@ import ReactDOM from "react-dom/client";
 // );
 
 // const jsxHeading =  <h1 id="heading 1">This is JSX</h1>;
-//.....................................................................
+// .....................................................................
+
 const Title = () => (
   <h1 id="heading 1">This is Title in component</h1>
 );
 
+
+const Table = () => {
+  const numbers = [];
+  for (let i = 1; i <= 10; i++) {
+    numbers.push(i);
+  }
+
+  return (
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        {numbers.map((number) => (
+          <tr key={number}>
+            <td>{number}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
+
 const Heading = () => (
   <div id="container" className="div1">
-    <Title/>
+
+    <Title />
+    <Table />
     <h2 id="heading 2">This is Heading in component</h2>
   </div>
 );
